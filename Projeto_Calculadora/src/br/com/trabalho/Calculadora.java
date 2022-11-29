@@ -1,6 +1,6 @@
 package br.com.trabalho;
 
-public abstract class Calculadora {
+public class Calculadora {
 	
 	public double soma(double numeroA, double numeroB) {
 		return numeroA + numeroB;
@@ -10,16 +10,32 @@ public abstract class Calculadora {
 		return numeroA - numeroB;
 	}
 	
-	public abstract double divisao(double numeroA, double numeroB) throws Exception;
+	public double divisao(double numeroA, double numeroB) throws Exception {
+		try {
+			return numeroA / numeroB;
+		}catch (ArithmeticException e) {
+			throw new Exception(e);
+		}
+	}
 	
-	public abstract double multiplicacao(double numeroA, double numeroB);
+	public double multiplicacao(double numeroA, double numeroB) {
+		return numeroA * numeroB;
+	}
 	
-	public abstract double exponencial(double numeroA, double numeroB);
+	public double exponencial(double numeroA, double numeroB) {
+		return Math.pow(numeroA, numeroB);
+	}
 	
-	public abstract double raizquadrada(double numeroA);
+	public double raizquadrada(double numeroA) {
+		return Math.sqrt(numeroA);
+	}
 	
-	public abstract double teto(double numeroA);
+	public double teto(double numeroA) {
+		return Math.ceil(numeroA);
+	}
 	
-	public abstract void piso(double numeroA);
+	public double piso(double numeroA) {
+		return Math.floor(numeroA);
+	}
 	
 }
