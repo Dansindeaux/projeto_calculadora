@@ -2,9 +2,13 @@ package br.com.trabalho;
 
 public abstract class Calculadora {
 	
-	public abstract double soma(double numeroA, double numeroB);
+	public double soma(double numeroA, double numeroB) {
+		return numeroA + numeroB;
+	}
 	
-	public abstract double subtracao(double numeroA, double numeroB);
+	public double subtracao(double numeroA, double numeroB) {
+		return numeroA - numeroB;
+	}
 	
 	public abstract double divisao(double numeroA, double numeroB) throws Exception;
 	
